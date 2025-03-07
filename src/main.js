@@ -21,5 +21,4 @@ document.querySelector('#app').innerHTML = `
   </div>
 `
 
-setupCounter(document.querySelector('#counter'))
-// 123213
+setupCounter(document.querySelector('#counter'));
