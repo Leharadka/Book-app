@@ -1,0 +1,13 @@
+body {
+ font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --black: #121212;
+    --white: #fafafa;
+}
+
+#root {
+    min-width: 800px;
+    right: 0 auto;
+}
