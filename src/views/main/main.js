@@ -1,6 +1,7 @@
 import { AbstractView } from "../../common/view.js";
 import onChange from "on-change";
 import { Header } from "../../components/header/header.js";
+import { Search } from "../../components/search/search.js";
 export class MainView extends AbstractView {
   state = {
     list: [],
@@ -15,7 +16,7 @@ export class MainView extends AbstractView {
     this.setTitle("Поиск книг");
   }
 
-  appStateHook(path) {  
+  appStateHook(path) {
     if (path === "favorites") {
       console.log(path);
     }
@@ -23,6 +24,7 @@ export class MainView extends AbstractView {
 
   render() {
     const main = document.createElement("div");
+    main.append(new Search(this.state).render());
     this.app.innerHTML = "";
     this.app.append(main);
     this.renderHeader();
@@ -30,6 +32,6 @@ export class MainView extends AbstractView {
 
   renderHeader() {
     const header = new Header(this.appState).render();
-    this.app.prepend(header)
+    this.app.prepend(header);
   }
 }
